@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 
 function Register() {
   const navigate = useNavigate()
@@ -16,7 +17,7 @@ function Register() {
         setMessage("Please fill in all fields")
         return
       }
-      const response = await axios.post('http://localhost:3001/register', { username, password })
+      const response = await axios.post(`${API_URL}/register`, { username, password })
       navigate('/login')
     } catch (error) {
       console.error('Registration failed:', error)

@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import {BrowserRouter as Router, Routes, Route,Navigate} from 'react-router-dom'
-import Register from './components/register.jsx'
+import Register from './components/Register.jsx'
 import Login from './components/Login.jsx'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 
 function Login() {
   const navigate = useNavigate()
@@ -11,7 +12,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:3001/login', { username, password })
+      const response = await axios.post(`${API_URL}/login`, { username, password })
       
       // ถ้า Login สำเร็จ มักจะเก็บ Token ไว้ใน localStorage
       localStorage.setItem('token', response.data.token) 
