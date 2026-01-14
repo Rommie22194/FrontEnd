@@ -1,22 +1,21 @@
-import { useState } from 'react'
-import {BrowserRouter as Router, Routes, Route,Navigate} from 'react-router-dom'
-import Register from './components/Register.jsx'
-import Login from './components/Login.jsx'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import Register from './components/Register'
+import Login from './components/Login'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <Router>
-      <div>
-        <Routes>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </div>
-    </Router>
+      <Routes>
+        {/* หน้าแรกให้ redirect */}
+        <Route path="/" element={<Navigate to="/login" />} />
 
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* กัน route อื่น ๆ */}
+        <Route path="*" element={<Navigate to="/login" />} />
+      </Routes>
+    </Router>
   )
 }
 
