@@ -35,12 +35,6 @@ function Login() {
           <img 
             src="https://i.pinimg.com/736x/b6/21/16/b62116e3a13811d253e7fc9017c75170.jpg" 
             alt="Login Illustration" 
-            style={{ 
-              maxWidth: "70%", 
-              maxHeight: "70%", 
-              objectFit: "contain",
-              filter: "drop-shadow(0 0 20px rgba(255,255,255,0.1))"
-            }}
           />
         </div>
 
