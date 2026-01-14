@@ -7,10 +7,8 @@ function App() {
     <Router>
       <Routes>
         {/* หน้าแรกให้ redirect */}
-        <Route path="/" element={<Navigate to="/register" />} />
-
-        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
 
         {/* กัน route อื่น ๆ */}
         <Route path="*" element={<Navigate to="/login" />} />
